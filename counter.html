@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0;
+          background-color: #4C3B4D;
+        }
+        .counter {
+          font-size: 2rem;
+          margin-bottom: 20px;
+        }
+        button {
+          padding: 10px 20px;
+          margin: 5px;
+          font-size: 1rem;
+          cursor: pointer;
+          border: none;
+          border-radius: 5px;
+          background-color: #C19875;
+          color: white;
+        }
+        button:hover {
+          background-color: #F2E3BC;
+        }
+        button:active {
+          background-color: #F2E3BC;
+        }
+      </style>
+  </head>
+  <body>
+    <div x-data="counter">
+      <div>
+        <h1>Counter</h1>
+        <div class="counter" x-text="count"></div>
+        <div>
+          <button @click="increment">+</button>
+          <button @click="decrement">-</button>
+          <button @click="reset">Reset</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./counter.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>

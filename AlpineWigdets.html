@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.0/dist/alpine.min.js"
+      defer
+    ></script>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          /* justify-content: center;
+          align-items: center; */
+          height: 100vh;
+          margin: 0;
+          background-color: #4C3B4D;
+          
+        }
+        .counter {
+          font-size: 2rem;
+          margin-bottom: 20px;
+        }
+        button {
+          padding: 10px 20px;
+          margin: 5px;
+          font-size: 1rem;
+          cursor: pointer;
+          border: none;
+          border-radius: 5px;
+          background-color: #C19875;
+          color: white;
+        }
+        button:hover {
+          background-color: #F2E3BC;
+        }
+        button:active {
+          background-color: #F2E3BC;
+        }
+      </style>
+  </head>
+  <body>
+    <div x-data="{ title: 'Hello Vincent' }">
+      <p x-text="title"></p>
+      <button @click="title='Vincent he\'s a chilled dude!'">About</button>
+      <button @click="title='Vincent loves coding!'">Activities</button>
+    </div>
+    <hr>
+
+    <div x-data="{ count: 1 }">
+      <p x-text="count"></p>
+      <button @click="count++">Count Up</button>
+      <button @click="count--">Count Down</button>
+    </div>
+    <hr>
+
+
+    <div x-data="{ show: false }">
+        <button @click="show=!show">Show</button>
+        <div x-show.transition="show">Hello Everyone!</div>
+    </div>
+    <hr>
+
+    <div x-data="{ title: 'AlpineJS is Awesome' }">
+        <p x-text="title"></p>
+        <input type="text" x-model="title">
+    </div>
+    <hr>
+
+    <div x-data="{ code: '<p>Dynamic Paragraph</p>' }">
+        <div x-ref="sentence">I am a sentence</div>
+        <button @click="$refs.sentence.innerText = 'I just changed'">Change Sentence</button>
+    </div>
+    <hr>
+
+    <div x-data="{ socks: 'blue' }">
+        <template x-if="socks=='blue'">
+            <p>My socks are blue</p>
+        </template>
+        <template x-if="socks=='green'">
+            <p>My socks are green</p>
+        </template>
+        <button @click="socks = 'green'">Change Sox</button>
+    </div>
+    <hr>
+
+    <div x-data="{ groceries: ['Milk', 'Eggs', 'Cheese', 'Pizza', 'Burger'] }">
+        <p>Groceries</p>
+        <ul>
+            <template x-for="item in groceries">
+                <li x-text="item"></li>
+            </template>
+        </ul>
+    </div>
+  </body>
+</html>

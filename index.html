@@ -9,52 +9,30 @@
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
     ></script>
     <style>
-        body {
+      body {
           font-family: Arial, sans-serif;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 100vh;
-          margin: 0;
-          background-color: #4C3B4D;
-        }
-        .counter {
-          font-size: 2rem;
-          margin-bottom: 20px;
-        }
-        button {
-          padding: 10px 20px;
-          margin: 5px;
-          font-size: 1rem;
-          cursor: pointer;
-          border: none;
-          border-radius: 5px;
-          background-color: #C19875;
-          color: white;
-        }
-        button:hover {
-          background-color: #F2E3BC;
-        }
-        button:active {
-          background-color: #F2E3BC;
-        }
-      </style>
+          text-align: center;
+          margin-top: 50px;
+          background-color: #9CAFB7;
+      }
+      a {
+          display: block;
+          margin: 20px;
+          font-size: 20px;
+          text-decoration: none;
+          color: #007BFF;
+      }
+      a:hover {
+          text-decoration: underline;
+      }
+  </style>
   </head>
   <body>
-    <div x-data="counter">
-      <div>
-        <h1>Counter</h1>
-        <div class="counter" x-text="count"></div>
-        <div>
-          <button @click="increment">+</button>
-          <button @click="decrement">-</button>
-          <button @click="reset">Reset</button>
-        </div>
-      </div>
-    </div>
-
-    <script src="./counter.js"></script>
-    <script src="./index.js"></script>
+    <h1>Counter widger and Alpinejs widgets</h1>
+    <p>Select a file to view:</p>
+    <a href="counter.html">Counter widgets</a>
+    <a href="AlpineWigdets.html">Alpinejs widgets</a>
+    
   </body>
 </html>
 
